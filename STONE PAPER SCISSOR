@@ -1,0 +1,56 @@
+import random
+lst = ['b','p','s']
+chance = 10
+no_of_chance = 0
+computer_points = 0
+human_points = 0
+print("\t\t\t\t\t\tbrick,paper,scissor\n\n")
+print("b for brick\np for paper\ns for scissor\n")
+
+while no_of_chance < chance:
+    _input = input('brick,paper,scissor:')
+    _random = random.choice(lst)
+
+    if _input == random:
+        print("TIE\n")
+
+    elif _input == "b" and _random == "p":
+        computer_points = computer_points + 1
+        print(f"your guess {_input} and computer_guess {_random}\n")
+        print("paper wraps brick \n computer wins ")
+    elif _input == "b" and _random == "s":
+        human_points = human_points + 1
+        print(f"your guess {_input} and computer_guess {_random}\n")
+        print("brick break sscissor \n you wins ")
+    elif _input == "p" and _random == "b":
+        human_points = human_points + 1
+        print(f"your guess {_input} and computer_guess {_random}\n")
+        print("paper wraps brick \n you wins ")
+    elif _input == "s" and _random == "b":
+        computer_points = computer_points + 1
+        print(f"your guess {_input} and computer_guess {_random}\n")
+        print("brick breaks scissor \n computer wins ")
+    elif _input == "p" and _random == "s":
+        computer_points = computer_points + 1
+        print(f"your guess {_input} and computer_guess {_random}\n")
+        print("scissor cut paper \n computer wins ")
+    elif _input == "s" and _random == "p":
+        human_points = human_points + 1
+        print(f"your guess {_input} and computer_guess {_random}\n")
+        print("scissor cut paper \n you wins ")
+    else:
+        print("you have wrong input\n")
+
+    no_of_chance = no_of_chance+1
+    print(f"{chance - no_of_chance} is left of of {chance}")
+print("\t\t\t\t\t\t\tGAVE OVER\n\n")
+
+if computer_points > human_points:
+    print("\t\t\t\t\t\t\t\tCOMPUTER WINS")
+
+
+if computer_points < human_points:
+    print("\t\t\t\t\t\t\t\tYOU WINS")
+
+print(f"your point is {human_points} and computer point is {computer_points}")
+
